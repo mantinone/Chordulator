@@ -28,7 +28,7 @@ document.addEventListener( "DOMContentLoaded", function(event) {
 })
 
 const playSound = ( event ) => {
-  let note = event.target.dataset.degree - 1
+  let note = event.target.dataset.degree
   setFrequency( note )
   vol.gain.setTargetAtTime( 1, audioContext.currentTime, 0.02)
 }
