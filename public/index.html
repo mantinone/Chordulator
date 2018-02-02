@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <title>Table Roller</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+    <script src="src/frequencies.js"></script>
+    <script src="src/index.js"></script>
     <title>Chordulator</title>
   </head>
   <body>
     <h1>Chordulator!</h1>
 
-    <button id="playNote"> Play a Sound! </button>
-    <br>
-    <br>
-    <br>
-    <input type="text" id="freqInput"></input>
-    <button id="freqButton"> Set Frequency </button>
+    <div id="noteBox">
+      <div class="note" data-degree="1"> I </div>
+      <div class="note" data-degree="2"> II </div>
+      <div class="note" data-degree="3"> III </div>
+      <div class="note" data-degree="4"> IV </div>
+      <div class="note" data-degree="5"> V </div>
+      <div class="note" data-degree="6"> VI </div>
+      <div class="note" data-degree="7"> VIII </div>
+      <div class="note" data-degree="8"> I </div>
+    </div>
 
+    <p> Hold down any key to play minor chords </p>
 
   </body>
 </html>

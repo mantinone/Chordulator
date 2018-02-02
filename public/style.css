@@ -2,3 +2,17 @@ body {
   background-color: #f7f4f0;
   padding-left: 15px;
 }
+
+.note {
+  background-color: white;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center
+}
+
+#noteBox {
+  display: flex;
+}
