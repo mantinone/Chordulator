@@ -1,15 +1,18 @@
-let currentScaleRoot = 40
-
 let majorScale = [0, 2, 4, 5, 7, 9, 11, 12]
 let minorScale = [0, 2, 3, 5, 7, 8, 10, 12]
+
+const scale = {
+  root: 40,
+  chordType: majorScale
+}
 
 const setHertz = ( num ) => {
 	return Math.pow( 2, ( (num - 49)/12 )) * 440
 }
 
 const setFrequency = ( note ) => {
-  let scaleDegree = currentScaleRoot + majorScale[note -1]
-  triad( scaleDegree, majorScale )
+  let scaleDegree = scale.root + majorScale[note -1]
+  triad( scaleDegree, scale.chordType )
 }
 
 const triad = ( rootNote, scale ) => {

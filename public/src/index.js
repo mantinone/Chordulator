@@ -1,8 +1,5 @@
-
 const audioContext = new AudioContext()
 const vol = audioContext.createGain()
-
-
 
 const setupOscillator = ( note, gain ) => {
   let newOscillator = audioContext.createOscillator()
@@ -25,7 +22,19 @@ document.addEventListener( "DOMContentLoaded", function(event) {
   soundButton.addEventListener('mousedown', playSound )
   soundButton.addEventListener('mouseup', stopSound )
   soundButton.addEventListener('mouseleave', stopSound )
+  document.addEventListener('keydown', handleKeydown )
+  document.addEventListener('keyup', handleKeyup )
 })
+
+const handleKeydown = ( event ) => {
+  const key = event.key || null
+  scale.chordType = minorScale
+}
+
+const handleKeyup = ( event ) => {
+  const key = event.key || null
+  scale.chordType = majorScale
+}
 
 const playSound = ( event ) => {
   let note = event.target.dataset.degree
@@ -36,5 +45,4 @@ const playSound = ( event ) => {
 const stopSound = ( event ) => {
   vol.gain.setTargetAtTime( 0, audioContext.currentTime, 0.1)
 }
-
 
