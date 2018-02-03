@@ -1,17 +1,16 @@
 const audioContext = new AudioContext()
 const vol = audioContext.createGain()
 
-const setupOscillator = ( note, gain ) => {
+const setupOscillator = ( gain ) => {
   let newOscillator = audioContext.createOscillator()
   newOscillator.type = "triangle"
-  newOscillator.frequency.value = setHertz( note )
   newOscillator.start(0)
   newOscillator.connect(gain)
   return newOscillator
 }
-const oscillator1 = setupOscillator(40, vol)
-const oscillator2 = setupOscillator(44, vol)
-const oscillator3 = setupOscillator(47, vol)
+const oscillator1 = setupOscillator( vol )
+const oscillator2 = setupOscillator( vol )
+const oscillator3 = setupOscillator( vol )
 
 vol.connect(audioContext.destination)
 vol.gain.value = 0

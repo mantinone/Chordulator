@@ -13,6 +13,15 @@ body {
   text-align: center
 }
 
-#noteBox {
+.middle {
+  background-color: #f4f4f4;
+}
+
+.bottom {
+  background-color: #e0e0e0;
+}
+
+.noteRow{
   display: flex;
+  flex-direction: row;
 }
