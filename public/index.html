@@ -11,8 +11,34 @@
   <body>
     <h1>Chordulator!</h1>
 
+    <div class="flexRow">
+      <p> Select Root Tone </p>
+      <select id="noteSelect">
+        <option> A </option>
+        <option> A# </option>
+        <option> B </option>
+        <option> C </option>
+        <option> C# </option>
+        <option> D </option>
+        <option> D# </option>
+        <option> E </option>
+        <option> F </option>
+        <option> F# </option>
+        <option> G </option>
+        <option> G# </option>
+      </select>
+      <select id="octaveSelect">
+        <option> 1 </option>
+        <option> 2 </option>
+        <option> 3 </option>
+        <option> 4 </option>
+        <option> 5 </option>
+        <option> 6 </option>
+      </select>
+    </div>
+
     <div id="noteBox">
-      <div class="noteRow">
+      <div class="flexRow">
         <div class="note" data-degree="21"> I </div>
         <div class="note" data-degree="22"> II </div>
         <div class="note" data-degree="23"> III </div>
@@ -21,7 +47,7 @@
         <div class="note" data-degree="26"> VI </div>
         <div class="note" data-degree="27"> VII </div>
       </div>
-      <div class="noteRow">
+      <div class="flexRow">
         <div class="note middle" data-degree="11"> I </div>
         <div class="note middle" data-degree="12"> II </div>
         <div class="note middle" data-degree="13"> III </div>
@@ -30,7 +56,7 @@
         <div class="note middle" data-degree="16"> VI </div>
         <div class="note middle" data-degree="17"> VII </div>
       </div>
-      <div class="noteRow">
+      <div class="flexRow">
         <div class="note bottom" data-degree="1"> I </div>
         <div class="note bottom" data-degree="2"> II </div>
         <div class="note bottom" data-degree="3"> III </div>
