@@ -18,12 +18,23 @@ vol.gain.value = 0
 document.addEventListener( "DOMContentLoaded", function(event) {
   let soundButton = document.getElementById('noteBox')
   let freqButton = document.getElementById('freqButton')
+  let noteSelect = document.getElementById('noteSelect')
+  let octaveSelect = document.getElementById('octaveSelect')
   soundButton.addEventListener('mousedown', playSound )
   soundButton.addEventListener('mouseup', stopSound )
   soundButton.addEventListener('mouseleave', stopSound )
+  noteSelect.addEventListener('change', changeNote)
+  octaveSelect = document.addEventListener('change', changeNote)
   document.addEventListener('keydown', handleKeydown )
   document.addEventListener('keyup', handleKeyup )
 })
+
+const changeNote = ( event ) => {
+  const noteSelect = document.getElementById('noteSelect')
+  const octaveSelect = document.getElementById('octaveSelect')
+
+  selectNewNote( noteSelect.value, parseInt(octaveSelect.value) )  
+}
 
 const handleKeydown = ( event ) => {
   const key = event.key || null
