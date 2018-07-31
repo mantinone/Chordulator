@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Table Roller</title>
+    <title>Chordulator</title>
     <link rel="stylesheet" href="style.css">
     <script src="src/frequencies.js"></script>
     <script src="src/index.js"></script>
-    <title>Chordulator</title>
   </head>
   <body>
     <h1>Chordulator!</h1>
@@ -29,10 +28,18 @@
       </select>
       <select id="octaveSelect">
         <option> 2 </option>
-        <option> 3 </option>
-        <option selected='selected'> 4 </option>
+        <option selected='selected'> 3 </option>
+        <option> 4 </option>
         <option> 5 </option>
       </select>
+    </div>
+
+    <div class="flexRow">
+      <p>Select Scale Type</p>
+        <select id='scaleSelect'>
+          <option selected='selected'> Major - Ionian </option>
+          <option> Minor - Aeolian </option>
+        </select>
     </div>
 
     <div id="noteBox">

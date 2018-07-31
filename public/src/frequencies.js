@@ -14,9 +14,15 @@ let noteNames = {
   'B': 11,
   'B#': 12, }
 
+let scaleTable = {
+  "Major - Ionian": majorScale,
+  "Minor - Aeolian": minorScale
+}
+
 const scale = {
   root: 28,
-  chordType: majorScale
+  chordType: majorScale,
+  scaleType: majorScale
 }
 
 const setHertz = ( num, octave ) => {
@@ -29,7 +35,7 @@ const setFrequency = ( note ) => {
     note = note-10
     octave++
   }
-  let scaleDegree = scale.root + majorScale[note -1]
+  let scaleDegree = scale.root + scale.scaleType[note -1]
   triad( scaleDegree, scale.chordType, octave )
 }
 
@@ -41,4 +47,8 @@ const triad = ( rootNote, scale, octave ) => {
 
 const selectNewNote = ( note, octave) => {
   scale.root = noteNames[note] + (octave*12 - 9)
+}
+
+const selectNewScale = ( newScale ) => {
+  scale.scaleType = scaleTable[newScale]
 }
