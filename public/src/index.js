@@ -28,7 +28,6 @@ document.addEventListener( "DOMContentLoaded", function(event) {
   octaveSelect.addEventListener('change', changeNote)
   scaleSelect.addEventListener('change', changeScale)
   document.addEventListener('keydown', handleKeydown )
-  document.addEventListener('keyup', handleKeyup )
 })
 
 const changeNote = ( event ) => {
@@ -46,12 +45,7 @@ const changeScale = ( event ) => {
 
 const handleKeydown = ( event ) => {
   const key = event.key || null
-  scale.chordType = minorScale
-}
-
-const handleKeyup = ( event ) => {
-  const key = event.key || null
-  scale.chordType = majorScale
+  setChord( key )
 }
 
 const playSound = ( event ) => {

@@ -26,6 +26,16 @@ body {
   flex-direction: row;
 }
 
+.chordButton{
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.chordButtonPressed{
+  background-color: #ccffcc;
+}
+
 select{
   margin: 16px 7px;
 }

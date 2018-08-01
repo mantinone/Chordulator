@@ -14,6 +14,18 @@ let noteNames = {
   'B': 11,
   'B#': 12, }
 
+let chords = {
+  majorTriad: [0, 4, 7],
+  minorTriad: [0, 3, 7],
+  maj1stInv: [0,-8,-5]
+}
+
+let keyChords = {
+  a: chords.majorTriad,
+  s: chords.minorTriad,
+  d: chords.maj1stInv
+}
+
 let scaleTable = {
   "Major - Ionian": majorScale,
   "Minor - Aeolian": minorScale
@@ -21,7 +33,7 @@ let scaleTable = {
 
 const scale = {
   root: 28,
-  chordType: majorScale,
+  chordType: chords.majorTriad,
   scaleType: majorScale
 }
 
@@ -39,10 +51,10 @@ const setFrequency = ( note ) => {
   triad( scaleDegree, scale.chordType, octave )
 }
 
-const triad = ( rootNote, scale, octave ) => {
+const triad = ( rootNote, chord, octave ) => {
   oscillator1.frequency.setTargetAtTime( setHertz( rootNote, octave ), audioContext.currentTime, 0. )
-  oscillator2.frequency.setTargetAtTime( setHertz(rootNote+scale[2], octave), audioContext.currentTime, 0 )
-  oscillator3.frequency.setTargetAtTime( setHertz(rootNote+scale[4], octave), audioContext.currentTime, 0 )
+  oscillator2.frequency.setTargetAtTime( setHertz(rootNote+chord[1], octave), audioContext.currentTime, 0 )
+  oscillator3.frequency.setTargetAtTime( setHertz(rootNote+chord[2], octave), audioContext.currentTime, 0 )
 }
 
 const selectNewNote = ( note, octave) => {
@@ -51,4 +63,8 @@ const selectNewNote = ( note, octave) => {
 
 const selectNewScale = ( newScale ) => {
   scale.scaleType = scaleTable[newScale]
+}
+
+const setChord = ( keypress ) => {
+  scale.chordType = keyChords[keypress] || chords.majorTriad
 }
