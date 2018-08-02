@@ -45,6 +45,14 @@ const changeScale = ( event ) => {
 
 const handleKeydown = ( event ) => {
   const key = event.key || null
+  const buttonList = document.getElementsByClassName('chordButton')
+
+  for ( i=0; i<buttonList.length; i++) {
+    buttonList[i].classList.remove('chordButtonPressed')
+    if( buttonList[i].dataset.key === key ){
+      buttonList[i].classList.add('chordButtonPressed')
+    }
+  }
   setChord( key )
 }
 
